@@ -646,6 +646,8 @@ body {
 	height: 100%;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.2);
+	opacity: 1;
+	transition: opacity 250ms var(--transition-cube);
 }
 .backdrop.is-hidden {
 	opacity: 0;
@@ -657,6 +659,8 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 
+	transition: transform 250ms var(--transition-cube);
+
 	display: flex;
 	justify-content: flex-end;
 	padding: 8px;
@@ -666,9 +670,12 @@ body {
 	background-color: var(--page-maintitle-color);
 }
 .close {
+	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	transition: border 250ms var(--transition-cube);
 
 	padding: 0;
 	width: 30px;
@@ -678,4 +685,8 @@ body {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	background-color: var(--page-maintitle-color);
 	cursor: pointer;
+}
+.close:hover,
+.close:focus {
+	border: solid 1px var(--primary-text-colour);
 }
