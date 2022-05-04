@@ -6,7 +6,8 @@
 	--page-maintitle-color: #ffffff;
 	--hero-footer-backcolor: #2f303a;
 	--change-color-button: #188ce8;
-}
+	--transition-cube: cubic-bezier(0.4, 0, 0.2, 1);
+	}
 h1,
 h2,
 h3,
@@ -65,6 +66,8 @@ body {
 .header-address {
 	display: flex;
 	margin-left: auto;
+
+	transition: color 250ms var(--transition-cube);
 }
 .li-adr:not(:last-child) {
 	margin-right: 50px;
@@ -79,6 +82,8 @@ body {
 	display: block;
 	padding-top: 24px;
 	padding-bottom: 25px;
+
+	transition: color 250ms var(--transition-cube);
 
 	text-decoration: none;
 	color: var(--primary-text-colour);
@@ -98,6 +103,8 @@ body {
 .link {
 	position: relative;
 	display: inline-block;
+
+	transition: color 250ms var(--transition-cube);
 
 	color: var(--primary-text-colour);
 	text-decoration: none;
@@ -126,7 +133,6 @@ body {
 	height: 4px;
 	background-color: rgba(33, 150, 243, 1);
 	border-radius: 2px;
-
 }
 /* Стиль телефона и почты  */
 .header-address .link {
@@ -189,6 +195,8 @@ body {
 	font-size: 16px;
 	line-height: 1.88;
 	letter-spacing: 0.03em;
+
+	transition: color 250ms var(--transition-cube), background-color 250ms var(--transition-cube);
 
 	min-width: 200px;
 	border-radius: 4px;
@@ -288,6 +296,10 @@ body {
 	border: none;
 	box-shadow: none;
 	color: #afb1b8;
+
+	transition: color 250ms var(--transition-cube);
+
+	
 }
 .svg.team {
 	fill: currentColor;
@@ -372,6 +384,8 @@ body {
 	width: 170px;
 	height: 92px;
 
+	transition: color 250ms var(--transition-cube), border 250ms var(--transition-cube);
+	
 	color: rgba(175, 177, 184, 1);
 	border: solid 1px rgba(175, 177, 184, 1);
 	border-radius: 4px;
@@ -403,6 +417,10 @@ body {
 	line-height: 1.62;
 	letter-spacing: 0.03em;
 
+	transition: color 250ms var(--transition-cube), 
+	background-color 250ms var(--transition-cube), 
+	box-shadow 250ms var(--transition-cube);
+
 	border-radius: 4px;
 	border: none;
 	cursor: pointer;
@@ -415,9 +433,8 @@ body {
 .nav-buttons:focus {
 	color: var(--page-maintitle-color);
 	background-color: var(--accent-colour);
-	box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
-				0px 4px 4px 0px rgba(0, 0, 0, 0.06),
-				0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+	box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+		0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* Наши работы */
@@ -438,13 +455,14 @@ body {
 	text-decoration: none;
 	color: var(--primary-text-colour);
 	display: inline-block;
+
+	transition: box-shadow 250ms var(--transition-cube);
 }
 
 .decor-shadow:hover,
 .decor-shadow:focus {
-	box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
-				0px 4px 4px 0px rgba(0, 0, 0, 0.06),
-				0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+	box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+		0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
 .product:nth-last-child(-n + 3) {
@@ -475,6 +493,46 @@ body {
 	line-height: 1.88;
 	margin: 0;
 }
+/*Текст на синем фоне */
+.thumb {
+	position: relative;
+	overflow: hidden;
+}
+.paragraf {
+	position: absolute;
+	transition: color 250ms var(--transition-cube), transform 250ms var(--transition-cube);
+	transform: translateY(0);
+
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	padding: 63px 24px;
+
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.56;
+	letter-spacing: 00.03em;
+	color: rgba(255, 255, 255, 0);
+}
+
+.decor-shadow:hover .paragraf,
+.decor-shadow:focus .paragraf {
+	color: rgba(255, 255, 255, 1);
+	transform: translateY(0%);
+}
+.decor-shadow:hover .overlay,
+.decor-shadow:focus .overlay {
+	transform: translateY(-100%);
+}
+.overlay {
+	position: absolute;
+	transition: transform 250ms var(--transition-cube);
+	transform: translateY(0);
+
+	background-color: rgba(33, 150, 243, 0.9);
+	height: 100%;
+	width: 100%;
+}
 
 /* Футер */
 /* Логотип */
@@ -486,6 +544,8 @@ body {
 .footer-logo {
 	display: inline-block;
 	margin-bottom: 20px;
+
+	transition: color 250ms var(--transition-cube);
 
 	font-family: "Raleway", sans-serif;
 	color: var(--page-maintitle-color);
@@ -504,6 +564,8 @@ body {
 .link-map {
 	display: block;
 
+	transition: color 250ms var(--transition-cube);
+
 	color: var(--page-maintitle-color);
 	text-decoration: none;
 	font-style: normal;
@@ -512,6 +574,8 @@ body {
 }
 .link-contact {
 	display: block;
+
+	transition: color 250ms var(--transition-cube);
 
 	color: rgba(255, 255, 255, 0.6);
 	text-decoration: none;
@@ -557,6 +621,8 @@ body {
 	align-items: center;
 	justify-content: center;
 
+	transition: background-color 250ms var(--transition-cube);
+
 	width: 44px;
 	height: 44px;
 
@@ -582,8 +648,8 @@ body {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden {
-opacity: 0;
-pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
 }
 .modal {
 	position: absolute;
