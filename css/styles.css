@@ -100,12 +100,15 @@ body {
 }
 
 /* Навигация */
-.link {
+
+.li-nav .link {
 	position: relative;
 	display: inline-block;
 
 	transition: color 250ms var(--transition-cube);
 
+}
+.link {
 	color: var(--primary-text-colour);
 	text-decoration: none;
 	font-weight: 500;
@@ -135,15 +138,13 @@ body {
 	border-radius: 2px;
 }
 /* Стиль телефона и почты  */
-.header-address .link {
-	color: var(--title-text-colour);
-}
 .icon-contact {
 	display: flex;
 	padding-top: 32px;
 	padding-bottom: 32px;
 	align-items: center;
 	color: var(--title-text-colour);
+	transition: color 250ms var(--transition-cube);
 }
 .header-icon {
 	margin-right: 10px;
@@ -152,10 +153,8 @@ body {
 
 /* Главная страница */
 /* Секция герой */
-.h1 {
+.hero .conteiner {
 	width: 696px;
-	margin-left: auto;
-	margin-right: auto;
 }
 .hero {
 	padding-top: 200px;
@@ -169,7 +168,7 @@ body {
 	background-color: var(--hero-footer-backcolor);
 
 	max-width: 1600px;
-	height: 600px;
+	/* height: 600px; */
 	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
 		url(../images/sectionphoto.jpg);
 	background-repeat: no-repeat;
@@ -178,7 +177,7 @@ body {
 }
 
 .hero-title {
-	display: inline-block;
+	display: block;
 	margin-bottom: 45px;
 
 	color: var(--page-maintitle-color);
@@ -286,7 +285,29 @@ body {
 .section.work {
 	padding-bottom: 94px;
 }
+.photo-overlay {
+	position: relative;
+	
+}
+.photo-description {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 
+	margin: 0;
+	padding-top: 27px;
+	padding-bottom: 27px;
+
+	text-align: center;
+
+	font-weight: 700;
+	line-height: 1.17;
+	color: rgba(255, 255, 255, 1);
+	text-transform: uppercase;
+
+	background-color: rgba(47, 48, 58, 0.8);
+}
 /* Наша команда */
 /* Кнопки соцсети */
 .icons-bottom.team {
@@ -297,7 +318,7 @@ body {
 	box-shadow: none;
 	color: #afb1b8;
 
-	transition: color 250ms var(--transition-cube);
+	transition: color 250ms var(--transition-cube), background-color 250ms var(--transition-cube);
 
 	
 }
@@ -564,24 +585,24 @@ body {
 .link-map {
 	display: block;
 
-	transition: color 250ms var(--transition-cube);
-
-	color: var(--page-maintitle-color);
 	text-decoration: none;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 1.71;
+
+	color: var(--page-maintitle-color);
+	transition: color 250ms var(--transition-cube);
 }
 .link-contact {
 	display: block;
 
-	transition: color 250ms var(--transition-cube);
-
-	color: rgba(255, 255, 255, 0.6);
 	text-decoration: none;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 1.71;
+
+	color: rgba(255, 255, 255, 0.6);
+	transition: color 250ms var(--transition-cube);
 }
 .link-con {
 	margin-bottom: 10px;
