@@ -668,19 +668,21 @@ body {
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.2);
 	opacity: 1;
-	transition: opacity 250ms var(--transition-cube);
+	transition: opacity 250ms var(--transition-cube), visibility 250ms var(--transition-cube);
 }
 .backdrop.is-hidden {
 	opacity: 0;
 	pointer-events: none;
+	visibility: hidden;
 }
 .modal {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	opacity: 1;
 
-	transition: transform 250ms var(--transition-cube);
+	transition: transform 250ms var(--transition-cube), opacity 250ms var(--transition-cube);
 
 	display: flex;
 	justify-content: flex-end;
@@ -689,12 +691,18 @@ body {
 	width: 528px;
 	height: 581px;
 	background-color: var(--page-maintitle-color);
+
+	box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+    border-radius: 4px;
 }
 .close {
 	position: absolute;
+	top: 8px;
+    right: 8px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 
 	transition: border 250ms var(--transition-cube);
 
